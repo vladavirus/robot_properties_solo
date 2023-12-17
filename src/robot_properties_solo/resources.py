@@ -34,6 +34,9 @@ class Resources(object):
         self.srdf_path = str(
             self.resources_dir / "srdf" / (self.robot_family + ".srdf")
         )
+        self.mjcf_path = str(
+            self.resources_dir / "mjcf" / (self.robot_name + ".mjcf")
+        )
         self.meshes_path = str(Path(self.package_path).parent)
 
         self.imp_ctrl_yaml_path = str(
