@@ -5,3 +5,4 @@ Copyright (C) 2018-2019, New York University , Max Planck Gesellschaft
 Copyright note valid unless otherwise stated in individual files.
 All rights reserved.
 """
+from robot_properties_solo.robot_resources import Resources

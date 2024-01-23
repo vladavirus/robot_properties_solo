@@ -15,7 +15,7 @@ from os import environ
 import pinocchio as se3
 from pinocchio.utils import zero
 from pinocchio.robot_wrapper import RobotWrapper
-from robot_properties_solo.resources import Resources
+from robot_properties_solo.robot_resources import Resources
 
 class SoloAbstract(object):
     """ Abstract class used for all Solo robots. """

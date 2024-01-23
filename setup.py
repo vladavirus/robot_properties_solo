@@ -59,6 +59,9 @@ data_files_to_install += [
         [path.join("src", package_name, "resources", package_name)],
     )
 ]
+data_files_to_install += [(path.join("share", package_name, path.dirname(res)),
+                           [path.join("src", package_name, res)]) for res in resources]
+
 
 # Install nodes and demos.
 scripts_list = []
