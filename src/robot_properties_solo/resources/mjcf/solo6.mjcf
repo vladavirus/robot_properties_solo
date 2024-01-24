@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <mujoco>
     <compiler angle="radian" meshdir="../meshes/stl/solo12/" autolimits="true"/>
     <asset>
@@ -41,7 +42,7 @@
                 <geom type="mesh" mesh="solo12_hip_fe_fr"/>
                 <inertial mass="0.14196048" pos="-0.09407251 0.00438935 -0.00001384" fullinertia="0.00002802 0.00038264 0.00038050 -0.00003687 0.00000009 0.00000000"/>
                 <body name="FR_UPPER_LEG" pos="-0.0195 -0.014 0">
-                    <joint name="FR_HFE" type="hinge" axis="0 1 0"  range="-3.14 3.14"/>
+                    <joint name="FR_HFE" type="hinge" axis="0 1 0" range="-3.14 3.14"/>
                     <geom type="mesh" mesh="solo12_upper_leg_right_side"/>
                     <inertial mass="0.14737324" pos="-0.00001530 -0.01767640 -0.07838230" fullinertia="0.00041540 0.00041637 0.00002982 0.00000000 -0.00000010 0.00004589"/>
                     <body name="FR_LOWER_LEG" pos="0 -0.037450000000000004 -0.16">
@@ -56,12 +57,12 @@
         </body>
     </worldbody>
     <actuator>
-        <general name="fl_haa" joint="FL_HAA" gaintype="fixed" gainprm="40.0" biastype="affine" biasprm="0 -40.0 -0.5" ctrlrange="-1.57 1.57"/>
-        <general name="fl_hfe" joint="FL_HFE" gaintype="fixed" gainprm="20.0" biastype="affine" biasprm="0 -20.0 -0.125" ctrlrange="-3.14 3.14"/>
-        <general name="fl_kfe" joint="FL_KFE" gaintype="fixed" gainprm="10.0" biastype="affine" biasprm="0 -10.0 -0.0625" ctrlrange="-3.14 3.14"/>
-        <general name="fr_haa" joint="FR_HAA" gaintype="fixed" gainprm="40.0" biastype="affine" biasprm="0 -40.0 -0.5" ctrlrange="-1.57 1.57"/>
-        <general name="fr_hfe" joint="FR_HFE" gaintype="fixed" gainprm="20.0" biastype="affine" biasprm="0 -20.0 -0.125" ctrlrange="-3.14 3.14"/>
-        <general name="fr_kfe" joint="FR_KFE" gaintype="fixed" gainprm="10.0" biastype="affine" biasprm="0 -10.0 -0.0625" ctrlrange="-3.14 3.14"/>
+        <motor name="fl_haa" joint="FL_HAA"/>
+        <motor name="fl_hfe" joint="FL_HFE"/>
+        <motor name="fl_kfe" joint="FL_KFE"/>
+        <motor name="fr_haa" joint="FR_HAA"/>
+        <motor name="fr_hfe" joint="FR_HFE"/>
+        <motor name="fr_kfe" joint="FR_KFE"/>
     </actuator>
     <sensor>
         <touch name="fl_touch" site="FL_FOOT"/>
