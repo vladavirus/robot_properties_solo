@@ -17,7 +17,7 @@
 
         <geom type="plane" size="4 4 0.1" rgba="1 1 1 1"/>
 
-        <body name="base" pos="0 0 0.35" euler="0 0 0">
+        <body name="base_link" pos="0 0 0.35" euler="0 0 0">
             <joint name="free_joint" type="free"/>
             <inertial mass="1.25123725" pos="0 0 0" fullinertia="0.00266220 0.01388510 0.01605370 -0.00003684 -0.00001716 -0.00000009"/>
             <geom type="mesh" mesh="solo_12_base"/>

@@ -18,7 +18,7 @@
 
         <geom type="plane" size="4 4 0.1" rgba="1 1 1 1"/>
 
-        <body name="base_front" pos="0 0 0.35" euler="0 0 0">
+        <body name="base_link" pos="0 0 0" euler="0 0 0">
             <joint type="free"/>
             <inertial mass="0.6256" pos="0.09415 0 0" diaginertia="0.0013311 0.00182818 0.0029124"/>
             <geom type="mesh" mesh="base_front"/>

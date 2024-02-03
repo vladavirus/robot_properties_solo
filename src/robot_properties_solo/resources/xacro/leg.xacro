@@ -20,12 +20,12 @@
   <xacro:property name="KFE_2_FOOT_z" value="${160.00 * 0.001}" />
 
   <!-- Macro defining solo leg. -->
-  <xacro:macro name="leg" params="prefix is_front is_right has_side_motion
+  <xacro:macro name="leg" params="prefix parent:=base_link is_front is_right has_side_motion
                                   mesh_ext color_name color opacity">
 
     <xacro:if value="${has_side_motion}">
       <joint name="${prefix}_HAA" type="revolute">
-        <parent link="base_link"/>
+        <parent link="${parent}"/>
         <child link="${prefix}_SHOULDER"/>
         <limit effort="1000" lower="-10" upper="10" velocity="1000"/>
         <!-- joints rotates around the x-axis -->
