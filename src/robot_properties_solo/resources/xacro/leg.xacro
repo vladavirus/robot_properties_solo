@@ -20,12 +20,12 @@
   <xacro:property name="KFE_2_FOOT_z" value="${160.00 * 0.001}" />
 
   <!-- Macro defining solo leg. -->
-  <xacro:macro name="leg" params="prefix is_front is_right has_side_motion
+  <xacro:macro name="leg" params="prefix parent:=base_link is_front is_right has_side_motion
                                   mesh_ext color_name color opacity">
 
     <xacro:if value="${has_side_motion}">
       <joint name="${prefix}_HAA" type="revolute">
-        <parent link="base_link"/>
+        <parent link="${parent}"/>
         <child link="${prefix}_SHOULDER"/>
         <limit effort="1000" lower="-10" upper="10" velocity="1000"/>
         <!-- joints rotates around the x-axis -->
@@ -55,13 +55,13 @@
         <visual>
             <xacro:unless value="${is_right}">
                 <xacro:if value="${is_front}">
-                    <origin xyz="0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_fl.${mesh_ext}"/>
                     </geometry>
                 </xacro:if>
                 <xacro:unless value="${is_front}">
-                    <origin xyz="-0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="-0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_hl.${mesh_ext}"/>
                     </geometry>
@@ -69,13 +69,13 @@
             </xacro:unless>
             <xacro:if value="${is_right}">
                 <xacro:if value="${is_front}">
-                    <origin xyz="0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_fr.${mesh_ext}"/>
                     </geometry>
                 </xacro:if>
                 <xacro:unless value="${is_front}">
-                    <origin xyz="-0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="-0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_hr.${mesh_ext}"/>
                     </geometry>
@@ -89,13 +89,13 @@
         <collision>
                 <xacro:unless value="${is_right}">
                 <xacro:if value="${is_front}">
-                    <origin xyz="0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_fl.${mesh_ext}"/>
                     </geometry>
                 </xacro:if>
                 <xacro:unless value="${is_front}">
-                    <origin xyz="-0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="-0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_hl.${mesh_ext}"/>
                     </geometry>
@@ -103,13 +103,13 @@
             </xacro:unless>
             <xacro:if value="${is_right}">
                 <xacro:if value="${is_front}">
-                    <origin xyz="0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_fr.${mesh_ext}"/>
                     </geometry>
                 </xacro:if>
                 <xacro:unless value="${is_front}">
-                    <origin xyz="-0.01950 0 0" rpy="0 0 0" />
+                    <origin xyz="-0.0 0 0" rpy="0 0 0" />
                     <geometry>
                         <mesh filename="package://robot_properties_solo/resources/meshes/${mesh_ext}/solo12/solo12_hip_fe_hr.${mesh_ext}"/>
                     </geometry>

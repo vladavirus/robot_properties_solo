@@ -9,13 +9,14 @@ All rights reserved.
 """
 
 from pathlib import Path
+from ament_index_python.packages import get_package_share_directory
 
 
 class Resources(object):
     def __init__(self, robot_name, robot_family="solo") -> None:
         super().__init__()
 
-        self.package_path = str(Path(__file__).resolve().parent.absolute())
+        self.package_path = get_package_share_directory("robot_properties_solo")
 
         self.robot_name = str(robot_name)
         self.robot_family = str(robot_family)
@@ -33,6 +34,12 @@ class Resources(object):
         )
         self.srdf_path = str(
             self.resources_dir / "srdf" / (self.robot_family + ".srdf")
+        )
+        self.mjcf_path = str(
+            self.resources_dir / "mjcf" / (self.robot_name + ".mjcf")
+        )
+        self.config_path = str(
+            self.resources_dir / "config" / (self.robot_name + "_driver.yaml")
         )
         self.meshes_path = str(Path(self.package_path).parent)
 

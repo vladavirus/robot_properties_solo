@@ -15,7 +15,7 @@ from os import environ
 import pinocchio as se3
 from pinocchio.utils import zero
 from pinocchio.robot_wrapper import RobotWrapper
-from robot_properties_solo.resources import Resources
+from robot_properties_solo.robot_resources import Resources
 
 class SoloAbstract(object):
     """ Abstract class used for all Solo robots. """
@@ -171,6 +171,7 @@ class Solo12Config(SoloAbstract):
     meshes_path = resources.meshes_path
     dgm_yaml_path = resources.dgm_yaml_path
     urdf_path = resources.urdf_path
+    mjcf_path = resources.mjcf_path
     ctrl_path = resources.imp_ctrl_yaml_path
 
     # The inertia of a single blmc_motor.

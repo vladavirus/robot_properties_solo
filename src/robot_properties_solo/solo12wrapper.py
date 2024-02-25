@@ -19,6 +19,7 @@ class Solo12Robot():
     def __init__(self):
 
         self.urdf_path = Solo12Config.urdf_path
+        self.mjcf_path = Solo12Config.mjcf_path
 
         # Create the robot wrapper in pinocchio.
         self.pin_robot = Solo12Config.buildRobotWrapper()
@@ -59,7 +60,7 @@ class Solo12Robot():
         q0 = np.array(Solo12Config.initial_configuration)
         dq0 = np.array(Solo12Config.initial_velocity)
         self.reset_state(q0, dq0)
-    
+
     def update_pinocchio(self, q, dq):
         """Updates the pinocchio robot.
         This includes updating:
